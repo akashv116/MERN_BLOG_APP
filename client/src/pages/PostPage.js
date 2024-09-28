@@ -10,7 +10,7 @@ export default function PostPage() {
   const {id} = useParams();
 
   useEffect(() => {
-    fetch(`http://localhost:4000/post/${id}`)
+    fetch(`https://mern-blog-app-s2nt.vercel.app/post/${id}`)
       .then(response => {
         response.json().then(postInfo => {
           console.log(postInfo , "postinfo");
@@ -36,7 +36,7 @@ export default function PostPage() {
         </div>
       )}
       <div className="image">
-        <img src={`http://localhost:4000/${postInfo?.url}`} alt=""/>
+        <img src={`https://mern-blog-app-s2nt.vercel.app/${postInfo?.url}`} alt=""/>
       </div>
       <div className="content" dangerouslySetInnerHTML={{__html:postInfo?.content}} />
     </div>
